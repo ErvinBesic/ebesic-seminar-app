@@ -5,7 +5,7 @@
   font-family: "Sriracha", cursive;
 }
 
-.Start {
+.start {
   justify-content: center;
   flex-direction: column;
   width: 100vw;
@@ -14,15 +14,15 @@
   background-color: #2980b9;
 }
 
-.MainLayout {
+.mainLayout {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
 }
 
-.Header1,
-.Header2 {
+.header1,
+.header2 {
   background-color: #2980b9;
   overflow: visible;
   width: 100%;
@@ -30,12 +30,12 @@
   color: white;
 }
 
-.Header1 {
+.header1 {
   text-decoration: underline;
   font-size: 25px;
 }
 
-.Header2 {
+.header2 {
   text-align: absolute;
   margin-left: 0.5rem;
   font-size: 20px;
@@ -43,27 +43,28 @@
   color: black;
 }
 
-.Room1,
-.Room2 {
+.room1,
+.room2 {
   column-count: 3;
   column-width: 50px;
   font-size: 20px;
   color: white; /*izmjena*/
 }
 
-.Members-list {
+.members-list {
   column-count: auto;
   column-gap: 20px; /*izmjena*/
   column-width: 50px; /*izmjena*/
-  font-size: 15px; /*izmjena*/
+  font-size: 17px; /*izmjena*/
   color: white; /*izmjena*/
+  align-items: flex-start;
 }
 
-.Messages-list,
-.Members-list {
+.messages-list,
+.members-list {
   padding: 10px 0;
-  max-width: 1000px;
-  max-height: 450px;
+  max-width: 900px;
+  max-height: 400px;
   width: 100%;
   margin: 0 auto;
   list-style: none;
@@ -71,25 +72,26 @@
   flex-grow: 1;
   overflow: auto;
 }
-.Messages-list {
+.messages-list {
   background: radial-gradient(
     circle,
     rgb(22, 120, 212) 0%,
     rgba(29, 37, 50, 1) 100%
   );
+  height: 400px;
 }
 
-.Messages-message {
+.messages-message {
   display: flex;
   margin-top: 10px;
 }
 
-.Messages-message.currentMember {
+.messages-message.currentMember {
   flex-direction: row-reverse;
   text-align: right;
 }
 
-.Message-content {
+.message-content {
   display: inline-block;
 }
 
@@ -129,7 +131,7 @@
   border-bottom: 1px solid dark-color;
   list-style-type: none;
   display: flex;
-  align-items: flex-start;
+  align-content: center;
 }
 
 .sender__info {
@@ -138,7 +140,7 @@
   padding: 5px;
 }
 
-.currentMember > .Message-content .text {
+.currentMember > .message-content .text {
   background-color: #d6eaf8;
   color: black;
 }
@@ -179,14 +181,15 @@ input {
   border-color: white;
 }
 
-.info {
-  position: absolute;
-  top: 0;
-  right: 30;
+.footer {
+  position: fixed;
+  left: 0;
   bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
-
-.info--p {
+.footer--p {
   font-size: 13px;
   margin-bottom: 10px;
   color: white;

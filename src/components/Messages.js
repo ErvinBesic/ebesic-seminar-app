@@ -5,7 +5,7 @@ class Messages extends Component {
   render() {
     const { messages } = this.props;
     return (
-      <ul className="Messages-list">
+      <ul className="messages-list">
         {messages.map((m) => this.renderMessage(m))}
         <div
           style={{ clear: "both" }}
@@ -29,11 +29,11 @@ class Messages extends Component {
     const { currentMember } = this.props;
     const messageFromMe = member.id === currentMember.id;
     const className = messageFromMe
-      ? "Messages-message currentMember"
-      : "Messages-message";
+      ? "messages-message currentMember"
+      : "messages-message";
     return (
       <li className={className}>
-        <div className="Message-content">
+        <div className="message-content">
           <div className="username">{member.clientData.username}</div>
           <div
             className="text"

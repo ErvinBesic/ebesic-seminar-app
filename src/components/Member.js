@@ -2,10 +2,10 @@ import React from "react";
 
 const Member = (member) => {
   return (
-    <li className="sender">
+    <li>
       {/* izmjena */}
-      <div>
-        <p classname="sender_info" style={{ backgroundColor: member.color }}>
+      <div classname="sender">
+        <p classname="sender_info" style={{ color: member.color }}>
           {member.name}
         </p>
       </div>

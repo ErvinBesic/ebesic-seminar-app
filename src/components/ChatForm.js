@@ -46,14 +46,14 @@ export default class ChatForm extends Component {
 
   render() {
     return (
-      <div className="MainLayout">
-        <div className="Header1">
+      <div className="mainLayout">
+        <div className="header1">
           <h1>Chat aplikacija</h1>
         </div>
         <hr />
-        <div className="Header2">
+        <div className="header2">
           <h1>Chat room dashboard</h1>
-          <div className="Room1">
+          <div className="room1">
             <p>Moj trenutni avatar:</p>
             <p style={{ backgroundColor: this.state.member.color }}>
               {" "}
@@ -61,7 +61,7 @@ export default class ChatForm extends Component {
               {this.state.member.username}
             </p>
           </div>
-          <div className="Room2">
+          <div className="room2">
             <p>Broj sudionika: </p>
             <p>{this.state.visibleMembers()}</p>
           </div>
@@ -69,7 +69,8 @@ export default class ChatForm extends Component {
 
         <hr />
         <br />
-        <div className="Members-list">
+
+        <div className="members-list">
           <p>Sudionici u sobi: </p>
           <br />
           <div>
