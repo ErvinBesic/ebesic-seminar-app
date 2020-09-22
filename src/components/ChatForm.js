@@ -42,6 +42,17 @@ export default class ChatForm extends Component {
     room.on("members", (members) => {
       this.setState({ members });
     });
+    room.on("member_join", (member) => {
+      const memberList = this.state.members;
+      memberList.push(member);
+      this.setState({ members: memberList });
+    });
+    room.on("member_leave", (member) => {
+      const memberLeave = this.state.members.filter(
+        (memberState) => memberState.id !== member.id
+      );
+      this.setState({ members: memberLeave });
+    });
   }
 
   render() {
@@ -54,7 +65,7 @@ export default class ChatForm extends Component {
         <div className="header2">
           <h1>Chat room dashboard</h1>
           <div className="room1">
-            <p>Moj trenutni avatar:</p>
+            <p>Moj avatar:</p>
             <p style={{ backgroundColor: this.state.member.color }}>
               {" "}
               {/* izmjena */}
@@ -62,7 +73,7 @@ export default class ChatForm extends Component {
             </p>
           </div>
           <div className="room2">
-            <p>Broj sudionika: </p>
+            <p>Uključeno: </p>
             <p>{this.state.visibleMembers()}</p>
           </div>
         </div>
@@ -71,21 +82,19 @@ export default class ChatForm extends Component {
         <br />
 
         <div className="members-list">
-          <p>Sudionici u sobi: </p>
-          <br />
-          <div>
-            <li>
-              {this.state.members.map((member) => {
-                return (
-                  <Member
-                    key={member.id}
-                    name={member.clientData.username}
-                    color={member.clientData.color}
-                  />
-                );
-              })}
-            </li>
-          </div>
+          <p>Prisutni: </p>
+
+          <li>
+            {this.state.members.map((member) => {
+              return (
+                <Member
+                  key={member.id}
+                  name={member.clientData.username}
+                  color={member.clientData.color}
+                />
+              );
+            })}
+          </li>
         </div>
         <hr />
 
